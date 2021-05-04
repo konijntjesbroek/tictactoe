@@ -7,7 +7,6 @@ Purpose:
     Play a pointless game
 '''
 
-play_game = True
 
 def draw_board(board):
     '''
@@ -97,17 +96,21 @@ def play_again():
         result = True
     return result
 
-while play_game == True:
-    print()
-    board = create_board(3, 3)
-    marker = 'x'
-    winner = False
+def main():
+    play_game = True
+    while play_game == True:
+        print()
+        board = create_board(3, 3)
+        marker = 'x'
+        winner = False
     
-    while not winner:
-        draw_board(board)
-        board, marker = player_turn(board, marker)
-        winner = chicken_dinner(board)
-    draw_board(board) 
-    print(f'{winner} game')
+        while not winner:
+            draw_board(board)
+            board, marker = player_turn(board, marker)
+            winner = chicken_dinner(board)
+        draw_board(board) 
+        print(f'{winner} game')
     
-    play_game = play_again()
+        play_game = play_again()
+if __name__ == "__main__":
+    main()
