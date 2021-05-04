@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 '''
 Tic Tac Toe 
 Author: Arlo Gittings
